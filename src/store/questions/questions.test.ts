@@ -24,7 +24,10 @@ describe('store/questions', () => {
         awnser: 'Yes, it is a new question!'
       }
       const newState = reducer(initialState, addQuestion(question))
-      expect(newState).toEqual({ ...initialState, data: [...initialState.data, { ...question, id: 2 }] })
+      expect(newState).toEqual({
+        state: 'COMPLETED',
+        data: [...initialState.data, { ...question, id: 2 }]
+      })
     })
   })
 
@@ -37,7 +40,7 @@ describe('store/questions', () => {
       }
 
       const newState = reducer(initialState, editQuestion(questionToEdit))
-      expect(newState).toEqual({ data: [questionToEdit] })
+      expect(newState).toEqual({ data: [questionToEdit], state: 'COMPLETED' })
     })
   })
 
@@ -46,17 +49,17 @@ describe('store/questions', () => {
       const questionToDelete: DeleteQuestionAction = { id: 1 }
 
       const newState = reducer(initialState, deleteQuestion({ id: 10 }))
-      expect(newState).toEqual(initialState)
+      expect(newState).toEqual({ ...initialState, state: 'COMPLETED' })
 
       const endState = reducer(newState, deleteQuestion(questionToDelete))
-      expect(endState).toEqual({ data: [] })
+      expect(endState).toEqual({ data: [], state: 'COMPLETED' })
     })
   })
 
   describe('deleteAllQuestions', () => {
     it('should delete all questions', () => {
       const newState = reducer(initialState, deleteAllQuestions())
-      expect(newState).toEqual({ data: [] })
+      expect(newState).toEqual({ data: [], state: 'COMPLETED' })
     })
   })
 
@@ -71,7 +74,15 @@ describe('store/questions', () => {
         payload: question
       })
 
-      expect(newState).toEqual({ ...initialState, data: [...initialState.data, { ...question, id: 2 }] })
+      expect(newState).toEqual({ state: 'COMPLETED', data: [...initialState.data, { ...question, id: 2 }] })
+    })
+
+    it('should set state to PENDING when adding question async', () => {
+      const newState = reducer(initialState, {
+        type: addQuestionAsyncAction.pending.type
+      })
+
+      expect(newState).toEqual({ ...initialState, state: 'PENDING' })
     })
   })
 })

@@ -6,7 +6,17 @@ export interface Question {
   awnser: string
 }
 
-export interface QuestionsState {
+export interface State {
+  state: 'IDLE' | 'PENDING' | 'COMPLETED'
+}
+
+export const initialQuestion: Question = {
+  id: 1,
+  question: 'How to add a question?',
+  awnser: 'Just use the form below'
+}
+
+export interface QuestionsState extends State {
   data: Question[]
 }
 

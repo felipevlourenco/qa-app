@@ -1,14 +1,15 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { QuestionsState, Question, AddQuestionAction, EditQuestionAction, ASYNC_TIMEOUT } from 'store/questions/types'
+import {
+  QuestionsState,
+  initialQuestion,
+  AddQuestionAction,
+  EditQuestionAction,
+  ASYNC_TIMEOUT
+} from 'store/questions/types'
 import { DeleteQuestionAction } from './types'
 
-export const initialQuestion: Question = {
-  id: 1,
-  question: 'How to add a question?',
-  awnser: 'Just use the form below'
-}
-
 export const initialState: QuestionsState = {
+  state: 'IDLE',
   data: [initialQuestion]
 }
 
@@ -31,26 +32,34 @@ const questionsSlice = createSlice({
         ...action.payload,
         id: nextId
       })
+      state.state = 'COMPLETED'
     },
     editQuestion: (state, action: PayloadAction<EditQuestionAction>) => {
       const newData = state.data.map((question) => (question.id === action.payload.id ? action.payload : question))
       state.data = newData
+      state.state = 'COMPLETED'
     },
     deleteQuestion: (state, action: PayloadAction<DeleteQuestionAction>) => {
       const newData = state.data.filter(({ id }) => id !== action.payload.id)
       state.data = newData
+      state.state = 'COMPLETED'
     },
     deleteAllQuestions: (state) => {
       state.data = []
+      state.state = 'COMPLETED'
     }
   },
   extraReducers: {
+    [addQuestionAsyncAction.pending.type]: (state) => {
+      state.state = 'PENDING'
+    },
     [addQuestionAsyncAction.fulfilled.type]: (state, action: PayloadAction<AddQuestionAction>) => {
       const nextId = state.data.length ? state.data[state.data.length - 1].id + 1 : 1
       state.data.push({
         ...action.payload,
         id: nextId
       })
+      state.state = 'COMPLETED'
     }
   }
 })
