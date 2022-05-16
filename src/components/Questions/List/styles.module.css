@@ -1,0 +1,14 @@
+.list {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+}
+
+.list > li {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.list:last-child {
+  border-bottom: 0;
+}

@@ -1,0 +1,25 @@
+.button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 4px;
+}
+
+.button:hover {
+  filter: brightness(1.2);
+}
+
+.button:disabled {
+  filter: brightness(1.0);
+  background-color: #ccc;
+}
+
+.primary {
+  color: #ffffff;
+  background-color: #318ed5;
+}
+
+.secondary {
+  color: #ffffff;
+  background-color: #e26a6a;
+}
