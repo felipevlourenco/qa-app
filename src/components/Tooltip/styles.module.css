@@ -1,0 +1,42 @@
+.tooltip {
+  position: relative;
+  width: max-content;
+}
+
+.child:hover {
+  cursor: help;
+}
+
+.content {
+  position: absolute;
+  top: -1.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  max-width: 300px;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: 5px 5px 5px #00000020;
+}
+
+.content::before {
+  content: "\A";
+  border-style: solid;
+  border-width: 2px 15px 15px 15px;
+  border-color: transparent transparent #ffffff transparent;
+  position: absolute;
+  left: 12px;
+  top: -15px;
+  z-index: 2;
+}
+
+.content::after {
+  content: "\A";
+  border-style: solid;
+  border-width: 0px 15px 15px 15px;
+  border-color: transparent transparent #cccccc transparent;
+  position: absolute;
+  left: 12px;
+  top: -15px;
+  z-index: 1;
+}

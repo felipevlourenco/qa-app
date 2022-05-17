@@ -7,4 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0px 5px 5px #00000010;
 }

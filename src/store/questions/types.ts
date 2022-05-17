@@ -3,7 +3,7 @@ export const ASYNC_TIMEOUT = 5000
 export interface Question {
   id: number
   question: string
-  awnser: string
+  answer: string
 }
 
 export interface State {
@@ -13,7 +13,7 @@ export interface State {
 export const initialQuestion: Question = {
   id: 1,
   question: 'How to add a question?',
-  awnser: 'Just use the form below'
+  answer: 'Just use the form below'
 }
 
 export interface QuestionsState extends State {
@@ -22,13 +22,13 @@ export interface QuestionsState extends State {
 
 export interface AddQuestionAction {
   question: string
-  awnser: string
+  answer: string
 }
 
 export interface EditQuestionAction {
   id: number
   question: string
-  awnser: string
+  answer: string
 }
 
 export interface DeleteQuestionAction {

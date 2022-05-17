@@ -21,7 +21,7 @@ describe('store/questions', () => {
     it('should add new question to state', () => {
       const question: AddQuestionAction = {
         question: 'Is this a new question?',
-        awnser: 'Yes, it is a new question!'
+        answer: 'Yes, it is a new question!'
       }
       const newState = reducer(initialState, addQuestion(question))
       expect(newState).toEqual({
@@ -36,7 +36,7 @@ describe('store/questions', () => {
       const questionToEdit: EditQuestionAction = {
         id: 1,
         question: 'Should edit this question?',
-        awnser: 'Yes, this questions was edited'
+        answer: 'Yes, this questions was edited'
       }
 
       const newState = reducer(initialState, editQuestion(questionToEdit))
@@ -67,7 +67,7 @@ describe('store/questions', () => {
     it('should add a question async', async () => {
       const question: AddQuestionAction = {
         question: 'Is this a new question?',
-        awnser: 'Yes, it is a new question!'
+        answer: 'Yes, it is a new question!'
       }
       const newState = reducer(initialState, {
         type: addQuestionAsyncAction.fulfilled.type,

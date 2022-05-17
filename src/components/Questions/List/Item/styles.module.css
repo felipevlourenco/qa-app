@@ -11,10 +11,14 @@
 .question {
   font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
 }
 
-.awnser {
+.question:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.answer {
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 200;
 }

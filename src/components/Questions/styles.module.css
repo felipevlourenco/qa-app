@@ -1,3 +1,8 @@
+.header {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .row {
   display: flex;
   gap: 0.5rem;

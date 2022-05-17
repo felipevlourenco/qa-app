@@ -9,7 +9,7 @@ const Item = ({ question }: QuestionItemProp) => {
     <li className={styles.item}>
       <button type="button" onClick={toggle} className={styles.button}>
         <span className={styles.question}>{question.question}</span>
-        {isToggled && <span className={styles.awnser}>{question.awnser}</span>}
+        {isToggled && <span className={styles.answer}>{question.answer}</span>}
       </button>
     </li>
   )

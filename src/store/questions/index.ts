@@ -10,7 +10,7 @@ import { DeleteQuestionAction } from './types'
 
 export const initialState: QuestionsState = {
   state: 'IDLE',
-  data: [initialQuestion, { id: 2, question: 'daiudai', awnser: 'hahahha' }]
+  data: [initialQuestion, { id: 2, question: 'daiudai', answer: 'hahahha' }]
 }
 
 const addQuestionAsync = async (question: AddQuestionAction) =>
