@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/qa-app/static/css/main.876922a8.css",
+    "main.js": "/qa-app/static/js/main.7e47bc2e.js",
+    "index.html": "/qa-app/index.html",
+    "static/media/delete.svg": "/qa-app/static/media/delete.40b77cf641b24e6c06883c95b930a38d.svg",
+    "static/media/edit.svg": "/qa-app/static/media/edit.487cd9fea5d022444930a18242f7a9c5.svg",
+    "main.876922a8.css.map": "/qa-app/static/css/main.876922a8.css.map",
+    "main.7e47bc2e.js.map": "/qa-app/static/js/main.7e47bc2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.876922a8.css",
+    "static/js/main.7e47bc2e.js"
+  ]
+}
