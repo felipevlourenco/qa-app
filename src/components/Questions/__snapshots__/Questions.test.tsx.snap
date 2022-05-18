@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/Questions should render 1`] = `
+<div>
+  <div
+    class="tooltip"
+  >
+    <div
+      class="child"
+    >
+      <span
+        class="header"
+      >
+        Created questions
+      </span>
+    </div>
+  </div>
+  <ul
+    class="list"
+  >
+    <li
+      class="item"
+    >
+      <div
+        class="button"
+      >
+        <span
+          class="question"
+        >
+          How to add a question?
+        </span>
+      </div>
+    </li>
+  </ul>
+  <div
+    class="row"
+  >
+    <button
+      class="button primary"
+      type="button"
+    >
+      Sort questions
+    </button>
+    <button
+      class="button secondary"
+      type="button"
+    >
+      Delete all questions
+    </button>
+  </div>
+</div>
+`;

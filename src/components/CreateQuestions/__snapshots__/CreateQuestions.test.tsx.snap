@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/CreateQuestions should render 1`] = `
+<div>
+  <div
+    class="create"
+  >
+    <div
+      class="tooltip"
+    >
+      <div
+        class="child"
+      >
+        <span
+          class="header"
+        >
+          Create a new question
+        </span>
+      </div>
+    </div>
+    <form
+      class="form"
+    >
+      <div
+        class="field"
+      >
+        <label
+          class="label"
+          for="question"
+        >
+          Question
+        </label>
+        <input
+          class="input"
+          id="question"
+          name="question"
+          value=""
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <label
+          class="label"
+          for="answer"
+        >
+          answer
+        </label>
+        <input
+          class="input"
+          id="answer"
+          name="answer"
+          value=""
+        />
+      </div>
+      <label
+        class="label"
+        for="delay"
+      >
+        <input
+          class="checkbox"
+          id="delay"
+          type="checkbox"
+        />
+        <span
+          class="span"
+        >
+          Add question with delay
+        </span>
+      </label>
+      <button
+        class="button primary"
+        type="submit"
+      >
+        Create question
+      </button>
+    </form>
+  </div>
+</div>
+`;

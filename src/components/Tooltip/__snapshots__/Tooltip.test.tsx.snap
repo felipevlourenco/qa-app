@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Tooltip should render 1`] = `
+<div>
+  <div
+    class="tooltip"
+  >
+    <div
+      class="child"
+    >
+      Hover to show tooltip
+    </div>
+  </div>
+</div>
+`;

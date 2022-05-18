@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component/Item should render 1`] = `
+<div>
+  <li
+    class="item"
+  >
+    <div
+      class="button"
+    >
+      <span
+        class="question"
+      >
+        This is a question
+      </span>
+    </div>
+  </li>
+</div>
+`;
