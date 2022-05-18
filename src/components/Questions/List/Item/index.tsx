@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form'
 import { AddQuestionAction } from 'store/questions/types'
 import Input from 'components/CreateQuestions/Input'
 import Button from 'components/Button'
+import { toggleToast } from 'store/global'
 
 const Item = ({ question }: QuestionItemProp) => {
   const dispatch = useAppDispatch()
@@ -24,10 +25,12 @@ const Item = ({ question }: QuestionItemProp) => {
 
   const deleteHandler = () => {
     dispatch(deleteQuestion({ id: question.id }))
+    dispatch(toggleToast('Deleted question!'))
   }
 
   const onSubmit = handleSubmit((data) => {
     dispatch(editQuestion({ ...data, id: question.id }))
+    dispatch(toggleToast('Edited question!'))
     editOff()
   })
 

@@ -8,6 +8,7 @@ import sortQuestion from 'components/Questions/util'
 import { deleteAllQuestions } from 'store/questions'
 import AlertMessage from 'components/Questions/AlertMessage'
 import Tooltip from 'components/Tooltip'
+import { toggleToast } from 'store/global'
 
 const Questions = () => {
   const dispatch = useAppDispatch()
@@ -19,7 +20,12 @@ const Questions = () => {
   }, [isToggled, questions])
 
   const deleteAllHandler = () => {
-    dispatch(deleteAllQuestions())
+    if (questions.length) {
+      dispatch(deleteAllQuestions())
+      dispatch(toggleToast('Deleted all questions!'))
+    } else {
+      dispatch(toggleToast('No questions to delete!'))
+    }
   }
 
   return (

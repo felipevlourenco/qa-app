@@ -4,9 +4,9 @@ import {
   initialQuestion,
   AddQuestionAction,
   EditQuestionAction,
+  DeleteQuestionAction,
   ASYNC_TIMEOUT
 } from 'store/questions/types'
-import { DeleteQuestionAction } from './types'
 
 export const initialState: QuestionsState = {
   state: 'IDLE',

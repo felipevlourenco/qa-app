@@ -1,15 +1,15 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styles from 'components/CreateQuestions/Loader/styles.module.css'
 
 export const Loader = ({ className = 'root-portal', element = 'div' }) => {
-  const [container] = React.useState(() => {
+  const [container] = useState(() => {
     const el = document.createElement(element)
     el.classList.add(className)
     return el
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.appendChild(container)
     return () => {
       document.body.removeChild(container)

@@ -1,0 +1,19 @@
+.toast {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  transition: height 500ms ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #318ed5;
+  font-size: 1.5rem;
+}
+
+.show {
+  height: 50px;
+}

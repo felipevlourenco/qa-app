@@ -10,6 +10,7 @@ import Checkbox from 'components/CreateQuestions/Checkbox'
 import Loader from 'components/CreateQuestions/Loader'
 import useToggle from 'hooks/useToggle'
 import Tooltip from 'components/Tooltip'
+import { toggleToast } from 'store/global'
 
 const CreateQuestions = () => {
   const dispatch = useAppDispatch()
@@ -26,6 +27,7 @@ const CreateQuestions = () => {
     dispatch(isToggled ? addQuestionAsyncAction(data) : addQuestion(data))
     setValue('question', '')
     setValue('answer', '')
+    dispatch(toggleToast('Added question!'))
   })
 
   return (

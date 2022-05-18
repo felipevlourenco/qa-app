@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import questionsReducer from 'store/questions'
+import globalReducer from 'store/global'
 
 const store = configureStore({
   reducer: {
-    questions: questionsReducer
+    questions: questionsReducer,
+    global: globalReducer
   }
 })
 
