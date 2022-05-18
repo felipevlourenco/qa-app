@@ -3,7 +3,7 @@
 exports[`components/Button should render 1`] = `
 <div>
   <button
-    class="primary"
+    class="button primary"
     type="button"
   >
     Button
