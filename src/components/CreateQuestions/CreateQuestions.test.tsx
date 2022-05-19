@@ -28,8 +28,8 @@ describe('component/CreateQuestions', () => {
     fireEvent.input(questionInput!, 'question 1')
     fireEvent.input(answerInput!, 'answer 1')
 
-    act(() => {
-      fireEvent.click(button)
+    await act(async () => {
+      await fireEvent.click(button)
     })
 
     await waitFor(() => {
