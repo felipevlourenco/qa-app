@@ -76,4 +76,28 @@ describe('Questions and Answers app', () => {
     cy.get('button').eq(1).click()
     cy.get('main > div > span').should('be.visible').should('have.text', 'No questions in the list')
   })
+
+  it('should not submit new question if inputs are empty', () => {
+    const required = 'This field is required'
+    cy.get('button').eq(2).click()
+    cy.get('form > div > span').eq(0).should('be.visible').should('have.text', required)
+    cy.get('form > div > span').eq(1).should('be.visible').should('have.text', required)
+  })
+
+  it('should not submit new question if inputs are empty and submit after filling them', () => {
+    const required = 'This field is required'
+    cy.get('button').eq(2).click()
+    cy.get('form > div > span').eq(0).should('be.visible').should('have.text', required)
+    cy.get('form > div > span').eq(1).should('be.visible').should('have.text', required)
+
+    const newQuestion = {
+      question: 'Are you ready?',
+      answer: "Yes, I'm"
+    }
+    cy.addQuestion(newQuestion)
+
+    cy.get('li').eq(1).should('be.visible').should('have.text', newQuestion.question)
+    cy.get('li > div > span').eq(1).click()
+    cy.get('li > div > span').eq(2).should('be.visible').should('have.text', newQuestion.answer)
+  })
 })

@@ -36,6 +36,6 @@ Cypress.Commands.add('addQuestion', (question, delay = false) => {
 
   if (delay) {
     // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(5000)
+    cy.wait(6000)
   }
 })
